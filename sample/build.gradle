@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    //mavenCentral()
+    //maven { url "http://oss.sonatype.org/content/groups/staging" }
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0 rc2"
+
+    defaultConfig {
+        versionName "1.0"
+        targetSdkVersion 22
+    }
+
+    productFlavors {
+        lollipop {
+            minSdkVersion 21
+            versionCode 1
+        }
+        kitkat {
+            minSdkVersion 15
+            versionCode 1
+        }
+    }
+
+}
+
+dependencies {
+//    compile 'com.github.d-max:spots-dialog:0.6'
+    compile project(':library')
+}
